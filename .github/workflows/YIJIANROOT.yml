@@ -71,3 +71,6 @@ jobs:
             tag: "K60Pro_${{ env.BUILD_TIME }}_${{ github.run_id }}"
             token: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Upload Aliyun
+      run: |       
+         python aliyun.py --token "${{ secrets.ALIYUN_TOKEN }}" --uploadFloder "test" --file "~/${{ github.event.inputs.zip_name }}.zip" 
