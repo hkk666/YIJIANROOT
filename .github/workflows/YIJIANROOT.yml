@@ -23,6 +23,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt install aria2 p7zip-full
+          pip install -U aligo
           mkdir tmp
           wget https://github.com/ssut/payload-dumper-go/releases/download/1.2.0/payload-dumper-go_1.2.0_linux_amd64.tar.gz -P ~/tmp/
           tar zxvf ~/tmp/payload-dumper-go_1.2.0_linux_amd64.tar.gz -o payload-dumper-go
@@ -50,6 +51,7 @@ jobs:
       - name: 创建一键 ROOT ZIP
         run: |
           cd ~
+          TIME=$(TZ=Asia/Shanghai date "+%Y%m%d")
           git clone https://github.com/tosasitill/YIJIANROOT_add.git -b 25.2 XIUBU
           cd XIUBU
           mv ~/output/* ./
@@ -68,7 +70,7 @@ jobs:
         with:
             artifacts: "~/${{ github.event.inputs.zip_name }}.zip"
             bodyfile: "${{ github.workspace }}/info.md"
-            tag: "K60Pro_${{ env.BUILD_TIME }}_${{ github.run_id }}"
+            tag: "${{ github.event.inputs.zip_name }}_${TIME}"
             token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Aliyun
