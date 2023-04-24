@@ -51,7 +51,7 @@ jobs:
       - name: 创建一键 ROOT ZIP
         run: |
           cd ~
-          echo "release_tag=${{ github.event.inputs.zip_name }}_${TIME}" >> $GITHUB_ENV
+          echo "release_tag=${{ github.event.inputs.zip_name }}_$(date +%Y.%m.%d)" >> $GITHUB_ENV
           git clone https://github.com/tosasitill/YIJIANROOT_add.git -b 25.2 XIUBU
           cd XIUBU
           mv ~/output/* ./
