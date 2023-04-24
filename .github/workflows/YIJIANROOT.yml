@@ -6,11 +6,11 @@ on:
       rom_url:
         description: 'ROM 下载直链'
         required: true
-        default: 'https://mirrorbits.lineageos.org/full/tissot/20230328/lineage-19.1-20230328-nightly-tissot-signed.zip'
+        default: ''
       zip_name:
         description: 'ZIP 包名称'
         required: true
-        default: 'TOSASITILL_YIJIANROOT'
+        default: 'K60Pro-V14.0.23.4.17.DEV'
 
 jobs:
   YIJIANROOT:
@@ -68,6 +68,6 @@ jobs:
         with:
             artifacts: "~/${{ github.event.inputs.zip_name }}.zip"
             bodyfile: "${{ github.workspace }}/info.md"
-            tag: "OUTPUT_${{ env.BUILD_TIME }}_${{ github.run_id }}"
+            tag: "K60Pro_${{ env.BUILD_TIME }}_${{ github.run_id }}"
             token: ${{ secrets.GITHUB_TOKEN }}
 
