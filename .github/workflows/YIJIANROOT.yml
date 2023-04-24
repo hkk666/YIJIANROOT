@@ -72,5 +72,5 @@ jobs:
             token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Aliyun
-         run: |       
+        run: |       
              python aliyun.py --token "${{ secrets.ALIYUN_TOKEN }}" --uploadFloder "test" --file "~/${{ github.event.inputs.zip_name }}.zip" 
