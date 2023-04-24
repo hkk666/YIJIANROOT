@@ -51,7 +51,7 @@ jobs:
       - name: 创建一键 ROOT ZIP
         run: |
           cd ~
-          TIME=$(TZ=Asia/Shanghai date "+%Y%m%d")
+          echo "release_tag=${{ github.event.inputs.zip_name }}_${TIME}" >> $GITHUB_ENV
           git clone https://github.com/tosasitill/YIJIANROOT_add.git -b 25.2 XIUBU
           cd XIUBU
           mv ~/output/* ./
@@ -70,7 +70,7 @@ jobs:
         with:
             artifacts: "~/${{ github.event.inputs.zip_name }}.zip"
             bodyfile: "${{ github.workspace }}/info.md"
-            tag: "${{ github.event.inputs.zip_name }}_${TIME}"
+            tag: ${{ env.release_tag }}
             token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Aliyun
