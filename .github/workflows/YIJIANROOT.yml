@@ -1,4 +1,4 @@
-name: YIJIANROOT 一键 ROOT
+name: YIJIANROOT
 
 on:
   workflow_dispatch:
