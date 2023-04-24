@@ -1,7 +1,3 @@
-![image](./info.png)
-
-# 暴力圈钱小工具
-
 ## 使用方法
 
 Fork 本仓库，在 Action 界面内选择 “YIJIANROOT”，然后点击 “Run workflow”，填入 ROM 下载直链，等待完成。
@@ -11,6 +7,8 @@ Fork 本仓库，在 Action 界面内选择 “YIJIANROOT”，然后点击 “R
 **本项目仅支持卡刷包/Recovery ROM**
 
 ## 其他
+
+个人自用
 
 特别感谢 [ShivamKumarJha](https://github.com/ShivamKumarJha)、[Suhun Han](https://github.com/ssut)、[xyazzrany](https://github.com/xyazzrany)
 
